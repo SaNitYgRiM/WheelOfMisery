@@ -1,0 +1,50 @@
+###
+GET http://localhost:5000
+
+###
+
+POST http://localhost:5000/auth/register
+Content-Type:application/json
+
+{
+  "email":"test65101@gmail.com",
+  "password":"123456911",
+  "username":"inc634911"
+}
+
+###
+
+POST http://localhost:5000/auth/login
+Content-Type:application/json
+
+{
+  "email":"test650@gmail.com",
+  "password":"1234569"
+}
+
+
+
+
+####
+GET http://localhost:5000/tasks?status=pending
+Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTUsImlhdCI6MTc2NTQyODYxMSwiZXhwIjoxNzY1NDcxODExfQ.KcYbPW2FluQJsiVN0Y7mLAVUwG6ib18tzoHt_RVhcWc
+
+###
+POST http://localhost:5000/tasks
+Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTUsImlhdCI6MTc2NTQyODYxMSwiZXhwIjoxNzY1NDcxODExfQ.KcYbPW2FluQJsiVN0Y7mLAVUwG6ib18tzoHt_RVhcWc
+Content-Type:application/json
+
+{
+  "content":"this is ur 2nd task",
+  "userId":10
+}
+
+
+###
+PUT http://localhost:5000/tasks/14
+Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTUsImlhdCI6MTc2NTQyODYxMSwiZXhwIjoxNzY1NDcxODExfQ.KcYbPW2FluQJsiVN0Y7mLAVUwG6ib18tzoHt_RVhcWc
+Content-Type:application/json
+
+{
+  "status":1
+}

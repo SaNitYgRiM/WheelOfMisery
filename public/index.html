@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wheel of Misery</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="styles.css">
+  
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="company">
+        <a href="" class="logo"><img src="" alt="logo"/></a>
+        <a href="" class="header-name header-titles">Wheel of Misery</a>
+      </div>
+      <div class="right-nav">
+          <button class="analytics-nav header-titles " id="historyBtn">History</button>
+          <button class="analytics-nav header-titles" id="analyticsBtn">Analytics</button>
+        
+          
+          <button  onclick="handleLogout()" class="analytics-nav header-titles" id="signin">Sign In</button>
+        
+      </div>
+      
+
+    </nav>
+  </header>
+  <main>
+    <section id="auth" >
+        <div>
+            <h2 className="sign-up-text">Login</h2>
+            <p>Create an account!</p>
+        </div>
+
+        <p id="error" style="display: none;"></p>
+        <input id="emailInput" placeholder="Email" required/>
+        
+        <input id="passwordInput" placeholder="********" type="password" required/>
+        <input id="usernameInput" placeholder="username"style="display:none"/>
+        <button id="authBtn" onclick="authenticate()">
+        
+            Submit
+        </button>
+        <hr />
+        <div class="register-content">
+            <p>Don&apos;t have an account?</p>
+            <button onclick="toggleIsRegister()" id="registerBtn">Sign Up</button>
+        </div>
+    </section>
+
+    <section id="analytics-section" style="display:none">
+      <div id="do-chart" class="charts">
+        
+        <canvas id="dough-chart"></canvas>
+      </div>
+      <div id="li-graph" class="charts">
+        
+        <canvas id="line-graph"></canvas>
+      </div>
+
+    </section>
+    <section id="history-section" style="display:none">
+      <h3>History</h3>
+      <div class="history-data">
+
+      </div>
+
+    </section>
+    
+    <div class="completed" style="display: none;">
+      <div class="title-completed">Completed</div>
+      <div class="list-completed box">
+        <ul><li>add bulleted list here</li></ul>
+      </div>
+    </div>
+    <div class="spinner" style="display: none;">
+      <canvas id="wheelCanvas" "></canvas>
+      <button id="spinButton" class="spin">SPIN</button>
+      
+    </div>
+    
+    <div class="tabs-area" style="display: none;">
+      <div class="title-entries-pending">
+        <button class="title-entries tablinks" onclick="switchTab(event,'entries')" id="defaultOpen">Entries</button>
+        <button class="title-Pending tablinks " onclick="switchTab(event,'pending')">Pending</button>
+      </div>
+      <div class="input-list-pending box">
+        <div class="input-box tab-content" id="entries">
+            <textarea id="input-entries" placeholder="enter your tasks here:"></textarea>
+        </div>
+        <div class="tab-content" id="pending">
+        this wher your pending task pile up
+
+      </div>
+        
+      </div>
+      
+    </div>
+    <dialog id="taskModal">
+  <h2>GO GO GO!!!</h2>
+  <div class="taskChosen"></div>
+  <p>NO TAKEBACKS! Go do your chosen task of misery NOW!! :)</p>
+  <form method="dialog">
+    <button id="closeButton">Close</button>
+  </form>
+</dialog>
+
+<dialog id="LogoutModal">
+  <h3>LOGOUT</h3>
+  <div style="margin-bottom: 20px;">Are you sure you want to sign out?</div>
+  
+  <form method="dialog">
+    <div style="display: flex; gap: 10px; justify-content: flex-end;">
+      
+      <button id="yes" value="logout" >Yes</button>
+      <button id="no" value="cancel" >No</button>
+    </div>
+  </form>
+</dialog>
+    
+  </main>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="index.js"></script>
+  <script>document.getElementById('defaultOpen').click()</script>
+</body>
+</html>

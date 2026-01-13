@@ -1,0 +1,17 @@
+node_modules
+# Keep environment variables out of version control
+.env
+
+/src/generated/prisma
+
+
+*.env
+
+
+postgres-data/
+pgdata/
+*.db
+
+
+.DS_Store
+*.log
